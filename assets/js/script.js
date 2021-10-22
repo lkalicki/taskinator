@@ -11,6 +11,14 @@ var createTaskHandler = function(event) {
 var listItemEl = document.createElement("li");
 listItemEl.className = "task-item";
 
+// check if input values are empty strings
+if (!taskNameInput || !taskTypeInput) {
+    alert("You need to fill out the task form!");
+    return false;
+  }
+
+  formEl.reset();
+
 // package up data as an object
 var taskDataObj = {
     name: taskNameInput,
